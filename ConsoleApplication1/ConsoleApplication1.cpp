@@ -8,10 +8,14 @@
 
 namespace fs = std::filesystem;
 
+
 int main() {
+    setlocale(LC_ALL, "Russian");
+
     std::string path;
     std::cout << "Введите путь к директории: ";
     std::getline(std::cin, path);
+    
 
     for (const auto& entry : fs::directory_iterator(path)) {
         if (entry.is_regular_file()) {
